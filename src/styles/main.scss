@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$font: "satoshi";
+@font-face {
+  font-family: $font;
+  src: url("/fonts/#{$font}.woff2") format("woff2"),
+    url("/fonts/#{$font}.woff") format("woff"),
+    url("/fonts/#{$font}.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .flx-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+::root {
+  --dark: #2d2d2d;
+  --primary: #c6b5a0;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+html {
+  touch-action: pan-y;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-primary/80;
+  }
+
+  @-moz-document url-prefix() {
+    scrollbar-color: rgb(198 181 160 / 0.8) transparent;
+    scrollbar-width: thin;
+  }
+}
+
+img {
+  @apply italic text-xs text-primary/50 font-light;
+}
+
+.focus {
+  @apply outline outline-transparent outline-1 outline-offset-4 rounded duration-200 focus-visible:outline-primary;
+}

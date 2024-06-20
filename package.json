@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "MaximeFontenay",
   "type": "module",
-  "version": "0.0.1",
+  "version": "4.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,6 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.10.3"
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vue": "^4.5.0",
+    "astro": "^4.10.3",
+    "sass": "^1.77.5",
+    "sharp": "^0.33.4",
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
   }
 }

@@ -1,51 +1,108 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import smokeVideoMP4 from "../images/smoke.mp4";
+import smokeVideoWEBM from "../images/smoke.webm";
+import smokeImage from "../images/smoke.webp";
+import "../styles/main.scss";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Maxime Fontenay - Front-end & Creative Developer. Passionné par la création de sites web et d'applications interactives et esthétiques."
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="keywords"
+      content="Maxime Fontenay, Front-end Developer, Creative Developer, Web Development, TypeScript, JavaScript, Vue.js, Nuxt.js, CSS, HTML, UX/UI Design"
+    />
+    <meta name="author" content="Maxime Fontenay" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Maxime Fontenay - Front-end & Creative Developer"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez le portfolio de Maxime Fontenay, un développeur front-end et créatif passionné par la création de sites web et d'applications interactives et esthétiques."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.maximefontenay.fr" />
+    <meta
+      property="og:image"
+      content="https://www.maximefontenay.fr/og-image.png"
+    />
+    <meta property="og:image:alt" content="Aperçu du site de Maxime Fontenay" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Maxime Fontenay - Front-end & Creative Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Découvrez le portfolio de Maxime Fontenay, un développeur front-end et créatif passionné par la création de sites web et d'applications interactives et esthétiques."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.maximefontenay.com/images/og-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Aperçu du site de Maxime Fontenay"
+    />
+    <meta name="twitter:site" content="@MaximeFontenay_" />
+
+    <title>Maxime Fontenay - Front & Creative Developer</title>
+  </head>
+  <body
+    class="xl:container font-satoshi relative bg-dark text-primary font-medium flex flex-col min-h-svh p-4 sm:p-6 overflow-x-clip"
+  >
+    <Header />
+    <main class="pb-20">
+      <slot />
+    </main>
+    <Footer />
+    <Image
+      class="object-cover -z-10 w-full fixed top-0 left-0 h-full scale-150"
+      src={smokeImage}
+      alt="decorative image"
+      width={2000}
+      height={200}
+      draggable={false}
+      format="webp"
+    />
+
+    <div
+      class="flx-center -z-10 w-full fixed top-0 left-0 h-full opacity-50 pointer-events-none"
+    >
+      <video
+        class="object-cover w-full h-full mix-blend-luminosity"
+        autoplay
+        muted
+        loop
+      >
+        <source src={smokeVideoWEBM} type="video/webm" />
+        <source src={smokeVideoMP4} type="video/mp4" />
+      </video>
+    </div>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
+
+<style></style>
