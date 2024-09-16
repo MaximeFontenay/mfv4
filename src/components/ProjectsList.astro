@@ -4,8 +4,20 @@ import image1 from "../images/image-1.webp";
 import image2 from "../images/image-2.webp";
 import image3 from "../images/image-3.webp";
 import image4 from "../images/image-4.webp";
+import image5 from "../images/image-5.webp";
+import image6 from "../images/image-6.webp";
 
 const projects = [
+  {
+    title: "WISHIBAM",
+    description: "site e-commerce",
+    techs: ["twig", "scss", "javascript"],
+    achievements: [
+      "Développement front de plusieurs e-commerces.",
+      "Références : Le Spot Evry\u00A0- The Village Outlet",
+    ],
+    image: image1,
+  },
   {
     title: "ANAXAGO",
     description: "design system | site vitrine",
@@ -21,7 +33,7 @@ const projects = [
       "Développement complet du design system en Nextjs, TypeScript et Tailwind.",
       "Intégration sur Storyblock et BuilderIO.",
     ],
-    image: image1,
+    image: image2,
   },
   {
     title: "INFLUENCE4YOU",
@@ -31,24 +43,31 @@ const projects = [
       "Développement du nouveau design system et de la librairie de plus de 60 composants en Vue 2 et Tailwind.",
       "Développement d’une extension Chrome & Firefox de statistiques de profil Instagram.",
     ],
-    image: image2,
+    image: image3,
   },
   {
     title: "PREEZEO",
     description: "site vitrine",
     techs: ["astro", "vue", "typescript", "tailwind", "ci/cd"],
-    achievements: ["Intégration complète du site vitrine."],
-    image: image3,
+    achievements: ["Développement complète du site vitrine."],
+    image: image4,
   },
   {
     title: "DATAÏADS",
     description: "site vitrine",
     techs: ["vue", "nuxt", "typescript", "tailwind"],
     achievements: [
-      "Intégrations de landing pages custom de plusieurs e-commerce en Vue 3.",
-      "Décathlon - Tag Heur - Alinéa - Aigle - Gémo - Célio - Monfairepart - Dalloz - Ultra Premium Direct - Interflora - Toner",
+      "Intégrations de product landing pages custom de plusieurs e-commerce en Vue 3.",
+      "Références : Décathlon\u00A0- Tag Heur\u00A0- Alinéa\u00A0- Aigle\u00A0- Gémo\u00A0- Célio\u00A0- Monfairepart\u00A0- Dalloz\u00A0- Ultra Premium Direct\u00A0- Interflora\u00A0- Toner",
     ],
-    image: image4,
+    image: image5,
+  },
+  {
+    title: "TOUCH OF PIXELS",
+    description: "site vitrine",
+    techs: ["vue", "nuxt", "typescript", "tailwind", "ci/cd"],
+    achievements: ["Développement complet du site vitrine."],
+    image: image6,
   },
 ];
 ---
@@ -58,11 +77,11 @@ const projects = [
 >
   {
     projects.map((project, index) => (
-      <article class="flex flex-col gap-2 font-medium">
+      <article class="flex flex-col gap-2 font-medium select-text">
         <h3 class="ml-auto"> 0{index + 1}</h3>
         <div class="overflow-clip h-12 w-full">
           <Image
-            class="object-cover w-full max-h-12"
+            class="object-cover w-full max-h-12 min-h-12 select-none"
             src={project.image}
             alt="decorative image"
             width={800}

@@ -33,9 +33,12 @@ $font: "satoshi";
   --primary: #c6b5a0;
 }
 
+::-moz-selection {
+  background: #121212;
+}
+
 ::selection {
-  background-color: var(--primary);
-  color: var(--dark);
+  background: #121212;
 }
 
 html {
@@ -57,6 +60,15 @@ html {
 
 img {
   @apply italic text-xs text-primary/50 font-light;
+}
+
+img,
+video,
+a,
+input,
+button,
+::placeholder {
+  @apply select-none;
 }
 
 .focus {
